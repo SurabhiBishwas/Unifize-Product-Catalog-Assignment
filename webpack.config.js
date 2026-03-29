@@ -6,7 +6,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src", "index.jsx"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: "auto",
+    publicPath: "/",
     filename: "[name].[contenthash].js",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
