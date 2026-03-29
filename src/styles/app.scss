@@ -1,0 +1,25 @@
+/* Purple viewport rails + light grey surround (design spec) */
+.catalogShell {
+  min-height: 100vh;
+  background: linear-gradient(
+    to right,
+    #5b21b6 0,
+    #5b21b6 22px,
+    #e8eaef 22px,
+    #e8eaef calc(100% - 22px),
+    #5b21b6 calc(100% - 22px),
+    #5b21b6 100%
+  );
+}
+
+.catalog-inner {
+  max-width: calc(72rem + 36px);
+}
+
+.catalog-main-panel {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.starSvg {
+  display: block;
+}
