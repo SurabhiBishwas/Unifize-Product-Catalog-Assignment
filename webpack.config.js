@@ -1,10 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src", "index.jsx"),
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: "auto",
     filename: "[name].[contenthash].js",
     assetModuleFilename: "assets/[hash][ext][query]",
     clean: true
@@ -49,6 +51,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "public", "index.html"),
       inject: "body"
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "public", "products.json"),
+          to: "products.json"
+        }
+      ]
     })
   ]
 };

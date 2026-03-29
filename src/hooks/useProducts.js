@@ -13,7 +13,7 @@ export default function useProducts() {
       setError(null);
       await new Promise((r) => setTimeout(r, 700));
       try {
-        const res = await fetch("/products.json");
+        const res = await fetch("products.json");
         const data = await res.json();
         const items = data && Array.isArray(data.products) ? data.products : data;
         if (alive) setProducts(Array.isArray(items) ? items : []);
